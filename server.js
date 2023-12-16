@@ -29,7 +29,7 @@ app.get('/goals', (req, res) => {
     res.status(200).send(db)
 })
 
-app.delete('delete-goal/:goal', (req, res) => {
+app.delete('/delete-goal/:goal', (req, res) => {
     const goalName = req.params.goal
 
     for (let i = 0; i < db.length; i++) {
