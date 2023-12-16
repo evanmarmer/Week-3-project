@@ -25,6 +25,21 @@ app.post('/create-goal', (req, res) => {
     res.status(200).send(db)
 })
 
+app.get('/goals', (req, res) => {
+    res.status(200).send(db)
+})
+
+app.delete('delete-goal/:goal', (req, res) => {
+    const goalName = req.params.goal
+
+    for (let i = 0; i < db.length; i++) {
+        if (goalName === db[i].goal) {
+            db.splice(i, 1)
+        }
+    }
+    res.status(200).send(db)
+})
+
 app.listen(8090, () => {
     console.log('we started on port 8090!')
 })
