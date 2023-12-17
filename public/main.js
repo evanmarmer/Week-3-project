@@ -38,7 +38,8 @@ deleteForm.addEventListener('submit', (event) => {
 
     axios.delete(`/delete-goal/${deleteInput.value}`)
     .then((response) => {
-        loadGoalsToDom(response.data)
+        loadGoalsToDom(response.data);
+        alert('Congratulations on completing your goal!')
     })
     .catch((error) => {
         console.log(error);
